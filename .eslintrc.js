@@ -1,16 +1,18 @@
 module.exports = {
-    "extends": "google",
-    "parser": "babel-eslint",
-    "rules": {
-        "indent": [2, 4],
-        "max-len": [2, {"code": 100}],
-        "linebreak-style": [2, "windows"],
-        "quotes": [2, "single"],
-        "semi": [2, "always"],
-        "brace-style": [2, "1tbs"],
-        "array-bracket-spacing": [2, "never"],
-        "camelcase": [2, {"properties": "always"}],
-        "eol-last": [2],
-        "no-trailing-spaces": [2]
-    }
-};
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  rules: {
+    '@typescript-eslint/ban-ts-ignore': ['off'],
+    '@typescript-eslint/camelcase': ['off'],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/unbound-method': ['off'],
+    '@typescript-eslint/no-use-before-define': ['off'],
+  },
+}

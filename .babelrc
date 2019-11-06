@@ -1,5 +1,9 @@
 {
-    "presets": [
-        "babel-preset-env"
-    ]
+  "presets": [
+    "@babel/typescript",
+    ["@babel/env", { "targets": { "browsers": ["last 2 versions"] } }]
+  ],
+  "plugins": [
+    ["module-resolver", { "extensions": [".ts", ".tsx"], "root": ["./src"] }]
+  ]
 }

@@ -1,4 +1,3 @@
-
 # Contributing to Transcriptase
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -23,4 +22,3 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 
 ## License
 By contributing, you agree that your contributions will be licensed under its [GPL-2.0 License](https://github.com/artem-solovev/gloc/blob/master/LICENSE)
-
