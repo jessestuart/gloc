@@ -127,20 +127,19 @@ export const setLoc = (anchor: HTMLAnchorElement, loc: string) => {
  */
 const getBadgeWithLines = (lines: string) => {
   return `
-    <div class='box' style='font-size: 0; font-family: "system-ui, sans-serif";'>
+    <div class='box' style='font-size: 0; font-family: system-ui, sans-serif;'>
 				<span
-					style='background-color: #555555; color: #fff; padding: 2px 2px; font-size: 12px;'
+					style='background-color: #555555; color: #fff; padding: 2px 2px; font-size: 12px; border-radius: 2px 0 0 2px'
 				>
 					${chrome.i18n.getMessage("lines")}
 				</span>
 				<span
 					class='${APP_CLASSNAME}'
-					style='background-color: #44CC11; color: #fff; padding: 2px 2px; font-size: 12px;'
+					style='background-color: #44CC11; color: #fff; padding: 2px 2px; font-size: 12px; border-radius: 0 2px 2px 0;'
 				>
 					${lines}
 				</span>
-  </div>
-      `;
+  </div>`;
 }
 
 /**

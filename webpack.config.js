@@ -90,8 +90,8 @@ const HTMLconfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + '/index.html',
-      filename: '/index.html',
+      template: './index.html',
+      filename: './index.html',
       inject: 'body',
       hash: true,
       minify: {
@@ -104,8 +104,8 @@ const HTMLconfig = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: __dirname + '/options.html',
-      filename: '/options.html',
+      template: './options.html',
+      filename: './options.html',
       inject: 'body',
       hash: true,
       minify: {
