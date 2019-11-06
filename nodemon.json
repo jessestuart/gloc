@@ -1,0 +1,6 @@
+{
+  "exec": "yarn build",
+  "ext": "ts,tsx",
+  "ignore": ["*.js", ".git/", "node_modules/"],
+  "watch": ["src/"]
+}

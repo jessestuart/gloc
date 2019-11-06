@@ -8,7 +8,7 @@ const JSconfig = {
   name: 'JS',
   entry: {
     background: './src/background.ts',
-    inject: './src/inject.ts',
+    inject: './src/inject.tsx',
     options: './src/options.ts',
     popup: './src/popup.ts',
   },
@@ -30,7 +30,7 @@ const JSconfig = {
         test: /\.js$/,
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },

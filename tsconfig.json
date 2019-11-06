@@ -9,6 +9,7 @@
 		"types": ["chrome", "jquery"],
 		"lib": ["es2015.core", "dom", "es6"],
 		"sourceMap": true,
+    "jsx": "react",
 		"plugins": [
 			{
 			  "name": "typescript-tslint-plugin",

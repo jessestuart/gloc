@@ -4,13 +4,13 @@
  * Licensed GPL-2.0 © Artem Solovev
  */
 import * as $ from 'jquery'
+import * as React from 'react'
+import { renderToString } from 'react-dom/server'
 
 import { APP_CLASSNAME, TRIES_DEFAULT } from './constants'
-import {
-  LOCATION,
-  InitialData,
-} from './types'
+import { LOCATION, InitialData } from './types'
 import { log, getLoc } from './utils'
+import { BadgeWithLines } from './components/BadgeWithLines'
 
 /**
  * Accepted abbreviations
@@ -20,17 +20,17 @@ import { log, getLoc } from './utils'
 let githubToken: string = null
 
 const gloc = (): void => {
-  init()
-    .then(res => {
-      appendLoc(res)
-      log('info', res)
-    })
-    .catch(err => log('err', err))
-}
+    init()
+      .then(res => {
+        appendLoc(res)
+        log('info', res)
+      })
+      .catch(err => log('err', err))
+  }
 
-/**
- * Main
- */
+  /**
+   * Main
+   */
 ;(() => {
   chrome.storage.sync.get({ 'x-github-token': '' }, result => {
     if (result && result['x-github-token'] !== null) {
@@ -117,29 +117,7 @@ const appendLoc = (config: InitialData) => {
 }
 
 export const setLoc = (anchor: HTMLAnchorElement, loc: string) => {
-  anchor.innerHTML += getBadgeWithLines(loc)
-}
-
-/**
- * Returns badge container for LOC with LOC
- * @param {number | string} lines - LOC | Error
- * @return {html}
- */
-const getBadgeWithLines = (lines: string) => {
-  return `
-    <div class='box' style='font-size: 0; font-family: system-ui, sans-serif;'>
-				<span
-					style='background-color: #555555; color: #fff; padding: 2px 2px; font-size: 12px; border-radius: 2px 0 0 2px'
-				>
-					${chrome.i18n.getMessage("lines")}
-				</span>
-				<span
-					class='${APP_CLASSNAME}'
-					style='background-color: #44CC11; color: #fff; padding: 2px 2px; font-size: 12px; border-radius: 0 2px 2px 0;'
-				>
-					${lines}
-				</span>
-  </div>`;
+  anchor.innerHTML += renderToString(<BadgeWithLines lines={loc} />)
 }
 
 /**
